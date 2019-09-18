@@ -1,10 +1,850 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>JAW ETH DAPP</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-<meta name="description" content="Description">
-<meta name="keywords" content="Keyword1, Keyword2">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="https://jawdapp.co/statics/dapp/jaws/css/common.css">
+    <link rel="stylesheet" href="https://jawdapp.co/statics/dapp/jaws/css/home.css?v=1.2">
+    <link rel="stylesheet" href="https://jawdapp.co/statics/dapp/jaws/css/alert.css">
+    <style>
+        .chart section .text p {
+            text-align: center;
+
+        }
+        .count-title {
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+    </style>
 </head>
-<iframe style="width:100%;height:100%;" src="https://jawdapp.co/index.php?s=dapp&c=jaws" frameborder="0">
-</iframe>
+<body>
+<div class="home">
+<!--    <input type="button" onclick="login()" value="login"/>-->
+    <div class="chart">
+        <section>
+            <canvas id="canvas" height="230" width="230"></canvas>
+            <div class="text">
+                <img src="/statics/dapp/jaws/img/Part_5.png" alt="" style="height: 60px;">
+                <p class="count-title number" id="count-number-title" data-to="{sprintf('%.2f',$input_total)}" data-speed="800">0</p>
+                <p style="display: block;">
+                    <span>ETH<img src="/statics/dapp/jaws/img/eth_logo_img.png" style="height: auto;width: 16px;margin: 0;display: inherit;position: relative;top: 2px;left: 5px"></span>
+<!--                    <span></span>-->
+                </p>
+            </div>
+        </section>
+        <div class="title-text">巨无霸广告娱乐世界</div>
+        <content>
+            <p>ETH智能合约分配比例</p>
+        </content>
+        <ul>
+            <li>
+                <p><i></i><span>智能分红储备池</span></p>
+                <p>40%</p>
+            </li>
+            <li>
+                <p><i></i><span>直推奖</span></p>
+                <p>22%</p>
+            </li>
+            <li>
+                <p><i></i><span>社区领导奖</span></p>
+                <p>12%</p>
+            </li>
+            <li>
+                <p><i></i><span>巨无霸广告奖池</span></p>
+                <p>12%</p>
+            </li>
+            <li>
+                <p><i></i><span>幸运奖池</span></p>
+                <p>3%</p>
+            </li>
+            <li>
+                <p><i></i><span>观看广告奖池</span></p>
+                <p>8%</p>
+            </li>
+            <li>
+                <p><i></i><span>技术团队</span></p>
+                <p>3%</p>
+            </li>
+        </ul>
+    </div>
+    <div class="time">
+        <div class="title">倒&nbsp;计&nbsp;时</div>
+        <ul>
+            <li>
+                <div class="name">/////<span>巨无霸广告奖池</span>/////</div>
+                <content>
+                    <p>24小时倒计时开彩，每增加一枚ETH时间增加三小时，开彩分配为最后300名玩家和300名投资最大玩家将获得100%奖池分配</p>
+                    <main><img src="/statics/dapp/jaws/img/icon.png" alt=""><span>ETH</span></main>
+                    <div class="timer count-title number" id="count-number" data-to="" data-speed="800">0</div>
+                </content>
+                <section>
+                    <p>00</p>
+                    <p>:</p>
+                    <p>00</p>
+                    <p>:</p>
+                    <p>00</p>
+                </section>
+                <img src="/statics/dapp/jaws/img/bookmark.png" alt="" class="bookmark">
+                <img src="/statics/dapp/jaws/img/bookmark.png" alt="" class="bookmark r">
+            </li>
+            <li>
+                <div class="name">/////<span>幸运广告奖池</span>/////</div>
+                <content>
+                    <p>72小时定时开彩，每轮只限新增玩家抽奖，100名幸运儿平均分配奖池</p>
+                    <main><img src="/statics/dapp/jaws/img/icon.png" alt=""><span>ETH</span></main>
+                    <div class="timer count-title number" id="count-number" data-to="" data-speed="800">0</div>
+                </content>
+                <section>
+                    <p>00</p>
+                    <p>:</p>
+                    <p>00</p>
+                    <p>:</p>
+                    <p>00</p>
+                </section>
+                <img src="/statics/dapp/jaws/img/bookmark.png" alt="" class="bookmark">
+                <img src="/statics/dapp/jaws/img/bookmark.png" alt="" class="bookmark r">
+            </li>
+            <li>
+                <div class="name">/////<span>观看广告奖励</span>/////</div>
+                <content>
+                    <p>每次观看广告20秒既可获得奖励，6小时后方可重复观看同样的广告，不同广告可持续观看获取奖励，分完为止</p>
+                </content>
+                <div class="wallet">
+                    <span>/////<u>奖励总量</u>/////</span>
+                    <h6>0<i>ETH</i></h6>
+                    <div class="text">
+                        <p>已有&nbsp;<u>0</u>&nbsp;人获得观看广告奖励</p>
+                        <p style="color: black">已领取奖励&nbsp;<i style="color: black; font-size: 16px; font-weight: 500;">0</i>&nbsp;ETH</p>
+                    </div>
+                </div>
+                <button type="button" onclick="jump_ad()">立即观看广告</button>
+            </li>
+        </ul>
+    </div>
+    <div class="join">
+        <div class="title">
+            <img src="/statics/dapp/jaws/img/joinLeft.png" alt="">&nbsp;&nbsp;立即参与&nbsp;&nbsp;
+            <img src="/statics/dapp/jaws/img/joinRight.png" alt="">
+        </div>
+        <content>
+            <div class="type">
+                <p class="active"><span>门票</span></p>
+                <p><span>参与</span></p>
+                <p><span>邀请</span></p>
+                <p><span>规则</span></p>
+            </div>
+            <div class="data">
+                <section>
+                    <form action="" onsubmit="return false;">
+                        <div class="ticket">当前燃烧比例：<span>0.1 ETH ≈ {$rate*0.1} JAW</span></div>
+                        <div class="_input">
+                            <input type="text" placeholder="" id="ticket_eth_amount">
+                            <span>ETH</span>
+                        </div>
+                        <p>获得&nbsp;JAW<span>--</span></p>
+                        <button type="button">购买</button>
+                    </form>
+                </section>
+                <section>
+                    <form action="" onsubmit="return false;">
+                        <div class="ticket">提示：请购买门票后再参加</div>
+                        <div class="_input">
+                            <input type="text" placeholder="请输入投入的数额" id="input_amount">
+                            <span>ETH</span>
+                        </div>
+                        <p>投入&nbsp;JAW<span>--</span></p>
+                        <button type="button">立即投入</button>
+                    </form>
+                </section>
+                <section>
+                    <div class="push">
+                        <div class="number">
+                            <h5>我的直推人数</h5>
+                            <h4><span>{$invite_num}</span>人</h4>
+                            <input type="hidden" value="{$invite}" id="invite">
+                            <p>我的推荐人<span>{$parent.username}</span></p>
+                        </div>
+                        <div class="url">
+                            <span>我的邀请链接</span>
+                            <p>{SITE_URL}/index.php?s=dapp&c=jaws&invite={$uid}</p>
+                        </div>
+                    </div>
+                    <button type="button" onclick="CopyToClipboard('{SITE_URL}/index.php?s=dapp&c=jaws&invite={$uid}')">复制我的邀请链接</button>
+                </section>
+                <section>
+                    <div class="name">
+                        <img src="/statics/dapp/jaws/img/joinName.png" alt="">&nbsp;&nbsp;玩法规则&nbsp;&nbsp;
+                        <img src="/statics/dapp/jaws/img/joinName.png" alt="">
+                    </div>
+                    <div class="text">
+                        <p>① 每个账号在出局前仅接受一笔投资，出局后方可原点复投，收益出局包括静动态，奖池，广告奖励。</p>
+                        <p>② 4级别出局，1-9.9投资额1.5倍，10-19.9投资额1.7倍，20-29.9投资额2.0倍，30以上投资額2.5倍</p>
+                        <p>③ 直推奖励22%按3代:10%->7%->5%获得。</p>
+                        <p>④ 靜態智能分紅每日0.3%~2.5%上下浮動。</p>
+                        <p>⑤ 观看广告奖励按4级别各获取的单次奖励各有不同，1级别0.0003，2级别0.0005，3级别0.001，4级别0.003。</p>
+                        <p>⑥ JAW代币根据入场每200万枚合约销毁为单位逐步升值，越用越有价值。</p>
+                        <p>⑦ 社区领导奖全球业绩12%按4个级别V各获得3%每日全球分红。</p>
+                    </div>
+                </section>
+            </div>
+        </content>
+    </div>
+    <div class="list">
+        <div class="bg"></div>
+        <content>
+            <section>
+                <ul>
+                    <li class="js-my-income">
+                        <div class="name">
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">&nbsp;&nbsp;我的收益&nbsp;&nbsp;
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">
+                        </div>
+                        <div class="text">
+                            <ol>
+                                <li>
+                                    <p>当前投资数量</p>
+                                    <p><span>{$my_current_total_input} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>下次分红时间还差</p>
+                                    <p><span></span></p>
+                                </li>
+                                <li>
+                                    <p>2.5倍动静出局还差</p>
+                                    <p><span>{$income.difference_amount} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>巨无霸奖池收益</p>
+                                    <p>
+                                        <span>{$income.big_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(4)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>幸运奖池收益</p>
+                                    <p>
+                                        <span>{$income.luck_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(5)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>观看广告奖励</p>
+                                    <p>
+                                        <span>{$income.look_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(6)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>推荐奖励</p>
+                                    <p>
+                                        <span>{$income.invite_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(2)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>社区领导奖励</p>
+                                    <p>
+                                        <span>{$income.leader_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(3)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>广告代理</p>
+                                    <p>
+                                        <span>{$income.ad_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(7)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>未结算预计每日分红</p>
+                                    <p><span>{$income.unsettled_data.unsettled_start} ～ {$income.unsettled_data.unsettled_end} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>分红收益</p>
+                                    <p>
+                                        <span>{$income.static_income} ETH</span>
+                                        <button type="button" onclick="jump_cash(1)">提现</button>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>未提币数量</p>
+                                    <p><span>{$income.un_cash} ETH</span></p>
+                                </li>
+                            </ol>
+<!--                            <button type="button" onclick="jump_cash()">提币收益</button>-->
+                        </div>
+                        <div class="bottom-left"></div>
+                        <div class="bottom-right"></div>
+                    </li>
+                    <li class="js-tongji">
+                        <div class="name">
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">&nbsp;&nbsp;统计&nbsp;&nbsp;
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">
+                        </div>
+                        <div class="text">
+                            <ol>
+                                <li>
+                                    <p>我的总分红收益</p>
+                                    <p><span>{$income.static_income} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>我的已投资累计总数量</p>
+                                    <p><span>{$my_total_input} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>已焚毁门票总量</p>
+                                    <p><span>{$income.destroy_ticket} JAW</span></p>
+                                </li>
+                                <li>
+                                    <p>200万焚毁门票单位还差</p>
+                                    {php $cha_num = 2000000-$income.destroy_ticket;}
+                                    <p><span>{$cha_num} JAW</span></p>
+                                </li>
+<!--                                <li>-->
+<!--                                    <p>投入的总资金</p>-->
+<!--                                    <p><span>{$income.input_total_num} ETH</span></p>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <p>总已结算静态收益</p>-->
+<!--                                    <p><span>{$income.settled_static_reward} ETH</span></p>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <p>总的推荐收益</p>-->
+<!--                                    <p><span>{$income.invite_total_reward} ETH</span></p>-->
+<!--                                </li>-->
+                            </ol>
+                        </div>
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                        <div class="bottom-left"></div>
+                        <div class="bottom-right"></div>
+                    </li>
+                    <li class="js-data-tongji">
+                        <div class="name">
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">&nbsp;&nbsp;数据统计&nbsp;&nbsp;
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">
+                        </div>
+                        <div class="text">
+                            <ol>
+                                <li>
+                                    <p>我的地址</p>
+                                    <p><span id="my_account"></span></p>
+                                </li>
+                                <li>
+                                    <p>我的直推总数</p>
+                                    <p><span>{$income.invite_num}</span></p>
+                                </li>
+                                <li>
+                                    <p>我的社区领导级别</p>
+                                    <p><span>V{$my_level}</span></p>
+                                </li>
+                                <li>
+                                    <p>主区</p>
+                                    <p><span>{$achievement.main_total} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>其他区</p>
+                                    <p><span>{$achievement.other_total} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>我的团队业绩24小时总数</p>
+                                    <p><span>{$my_team_total} ETH</span></p>
+                                </li>
+                                <li>
+                                    <p>全球社区业绩24小时总数</p>
+                                    <p><span>{$all_input_total} ETH</span></p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                        <div class="bottom-left"></div>
+                        <div class="bottom-right"></div>
+                    </li>
+                    <li class="js-leader-level">
+                        <div class="name">
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">&nbsp;&nbsp;全球社区领导排行榜&nbsp;&nbsp;
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">
+                        </div>
+                        <div class="text">
+                            <ol>
+                                <li>
+                                    <p>V1</p>
+                                    <p><span>{$leader_level[0]}</span></p>
+                                </li>
+                                <li>
+                                    <p>V2</p>
+                                    <p><span>{$leader_level[1]}</span></p>
+                                </li>
+                                <li>
+                                    <p>V3</p>
+                                    <p><span>{$leader_level[2]}</span></p>
+                                </li>
+                                <li>
+                                    <p>V4</p>
+                                    <p><span>{$leader_level[3]}</span></p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                        <div class="bottom-left"></div>
+                        <div class="bottom-right"></div>
+                    </li>
+                    <li>
+                        <div class="name">
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">&nbsp;&nbsp;历史记录&nbsp;&nbsp;
+                            <img src="/statics/dapp/jaws/img/joinName.png" alt="">
+                        </div>
+                        <div class="text js-history">
+                            <a href="/index.php?s=dapp&c=jaws&m=record">查看更多记录</a>
+                        </div>
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                    </li>
+                </ul>
+            </section>
+        </content>
+    </div>
+</div>
+<!-- 支付密码弹窗-->
+<div class="alert pwd-alert">
+    <div class="bg"></div>
+    <div class="pwd">
+        <div class="title">
+            <p>输入支付密码</p>
+            <span class="icon icon-close close"></span>
+        </div>
+        <div class="text">
+            <content>
+                <section>
+                    <input type="text" placeholder="" class="tel1">
+                    <input type="text" placeholder="">
+                    <input type="text" placeholder="">
+                    <input type="text" placeholder="">
+                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" class="tel6">
+                </section>
+            </content>
+            <div class="forget"><a href="">忘记支付密码？</a></div>
+        </div>
+    </div>
+</div>
+<script src="https://jawdapp.co/statics/dapp/jaws/js/jquery-3.3.1.min.js"></script>
+<script src="https://jawdapp.co/statics/dapp/jaws/js/Chart.js?v=2.1"></script>
+<script src="https://jawdapp.co/statics/dapp/jaws/js/layer/layer.js"></script>
+<script src="https://jawdapp.co/statics/dapp/jaws/js/number.js?v=1.1"></script>
+<script src="https://jawdapp.co/statics/dapp/elv/js/wallet.js?v=1.3"></script>
+<script>
+    var localurl = 'https://jawdapp.co';
+  
+    $("#count-number-title").data("countToOptions", {
+        formatter: function(b, a) {
+            console.log(b)
+            return b.toFixed(2);
+            // return b.toFixed(4).replace(/\B(?=(?:\d{3})+(?!\d))/g, ",")
+        }
+    });
+    $("#count-number-title").each(count);
+
+	$().ready(function () {
+		var status = true;
+		$(window).scroll(function () {
+			var top = $('.home .time').offset().top;
+			var scrollTop = $(window).scrollTop();
+			if (scrollTop > top) {
+				if (status) {
+					$("#count-number").data("countToOptions", {
+						formatter: function(b, a) {
+							return b.toFixed(4);
+							// return b.toFixed(4).replace(/\B(?=(?:\d{3})+(?!\d))/g, ",")
+						}
+					});
+					status = false;
+					$(".timer").each(count);
+				}
+			}
+		})
+	});
+</script>
+<script>
+    var rate = '{$rate}';
+    $(function() {
+
+
+    })
+    bigAdvertising();
+    $('.home .join .type p').click(function() {
+		var a = $(this).index();
+    	$(this).addClass('active').siblings('p').removeClass('active');
+		$('.home .join section').eq(a).show().siblings('section').hide();
+    })
+    //门票
+    $('#ticket_eth_amount').on('keyup',function(){
+        $("#ticket_eth_amount").val($("#ticket_eth_amount").val().replace(/^(\-)*(\d+)\.(\d\d\d\d).*$/,'$1$2.$3'));
+        var eth_amount = $('#ticket_eth_amount').val();
+        if(eth_amount == '') {
+            $('.join .data section:first p span').text('--');
+        }else{
+            var ticket_amount = parseFloat(eth_amount) * parseFloat(rate);
+            $('.join .data section:first p span').text(ticket_amount.toFixed(5).slice(0,-1));
+        }
+    })
+    $('.join .data section:first button').click(function() {
+        var eth_amount = $('#ticket_eth_amount').val();
+        if(eth_amount == 0 || eth_amount == '') {
+            layer.msg('请填写购买数量');
+            return;
+        }
+        buyTicket(eth_amount);
+    })
+    //参与
+    $('#input_amount').on('keyup',function(){
+        $("#input_amount").val($("#input_amount").val().replace(/^(\-)*(\d+)\.(\d\d\d\d).*$/,'$1$2.$3'));
+        var input_amount = $('#input_amount').val();
+        if(input_amount == '') {
+            $('.join .data section:eq(1) p span').text('--');
+        }else{
+            var ticket_amount = parseFloat(input_amount) * parseFloat(rate) * 0.1;
+            $('.join .data section:eq(1) p span').text(ticket_amount.toFixed(5).slice(0,-1));
+        }
+    })
+    $('.join .data section:eq(1) button').click(function() {
+        var input_amount = $('#input_amount').val();
+        if(input_amount == 0 || input_amount == '') {
+            layer.msg('请填写投入数量');
+            return;
+        }
+        trade(input_amount);
+    })
+    //购买门票
+    function buyTicket(num) {
+        $.ajax({
+            url : localurl + '/index.php?s=dapp&c=jaws&m=buyTicket&num='+num+'&account='+account,
+            method : 'get',
+            dataType : 'jsonp',
+            success : function(res) {
+                if(res.code == 1) {
+                    ticket_pay(num);
+                }else{
+                    layer.msg(res.msg);
+                }
+            }
+        })
+    }
+    function confirmBuyTicket(tx) {
+        $.ajax({
+            url : '/index.php?s=dapp&c=jaws&m=confirmBuyTicket&tx='+tx,
+            method : 'get',
+            dataType : 'json',
+            success : function(res) {
+                layer.msg(res.msg);
+                if(res.code == 1) {
+                    setTimeout('window.location.reload()',1000);
+                }
+            }
+        })
+    }
+    //参与
+    function trade(num) {
+        $.ajax({
+            url : localurl + '/index.php?s=dapp&c=jaws&m=trade&num='+num+'&account='+account,
+            method : 'get',
+            dataType : 'jsonp',
+            success : function(res) {
+                if(res.code == 1) {
+                    //amount:ETH数量；ticket_amount：门票数量
+                    trade_pay(res.return.amount,res.return.ticket_amount);
+                    //confirmTrade(res.return.amount);
+                }else{
+                    layer.msg(res.msg);
+                }
+            }
+        })
+    }
+    //确认参与:支付后回调
+    function confirmTrade(tx) {
+        $.ajax({
+            url : localurl + '/index.php?s=dapp&c=jaws&m=confirmTrade&tx='+tx,
+            method : 'get',
+            dataType : 'jsonp',
+            success : function(res) {
+                layer.msg(res.msg);
+                if(res.code == 1) {
+                    setTimeout('window.location.reload()',1000);
+                }
+            }
+        })
+    }
+    function bigAdvertising() {
+        var timer = setInterval(function() {
+            $.ajax({
+                url : localurl + '/index.php?s=dapp&c=jaws&m=bigAdvertising',
+                method : 'get',
+                dataType : 'jsonp',
+                success : function(res) {
+					$('.home .time ul li:first .number').data('to',parseFloat(res.return.big_amount).toFixed(4));
+                    $('.home .time ul li:eq(1) .number').data('to',parseFloat(res.return.luck_amount).toFixed(4));
+                    $('.home .time ul li:eq(2) .wallet h6').html(parseFloat(res.return.look_amount).toFixed(4)+'<i>ETH</i>');
+                    $('.home .time ul li:eq(2) .wallet .text u').html(res.return.look_data.count);
+                    $('.home .time ul li:eq(2) .wallet .text i').html(parseFloat(res.return.look_data.total).toFixed(4));
+                    var big_times = parseInt(res.return.big_time) - parseInt(res.return.now_time);
+                    var big_countdown = countdown(big_times);
+                    $('.home .time ul li:first section p:eq(0)').text(big_countdown.hour);
+                    $('.home .time ul li:first section p:eq(2)').text(big_countdown.minute);
+                    $('.home .time ul li:first section p:eq(4)').text(big_countdown.second);
+                    var luck_times = res.return.luck_time - res.return.now_time;
+                    var luck_countdown = countdown(luck_times);
+                    $('.home .time ul li:eq(1) section p:eq(0)').text(luck_countdown.hour);
+                    $('.home .time ul li:eq(1) section p:eq(2)').text(luck_countdown.minute);
+                    $('.home .time ul li:eq(1) section p:eq(4)').text(luck_countdown.second);
+                    if(luck_times < 0){
+                        clearInterval(timer);
+                    }
+                }
+            })
+        },1000);
+    }
+    var current_time = '{$current_time}';
+    var end_time = '{$end_time}';
+    var space_time = parseInt(end_time)-parseInt(current_time);
+    static_time_countdown(space_time);
+    function static_time_countdown(space_time) {
+        setInterval(function() {
+            space_time -- ;
+            var time_arr = countdown(space_time);
+            $('.js-my-income ol li:eq(1) p:eq(1) span').text(time_arr.hour+':'+time_arr.minute+':'+time_arr.second);
+        },1000)
+    }
+    function countdown(times) {
+        var hour = 0;
+        var minute = 0;
+        var second = 0;
+        if(times > -1){
+            hour = Math.floor(times/(60*60));
+            minute = Math.floor(times/60%60);
+            second = Math.floor(times%60);
+            times--;
+            if(hour < 10) {
+                hour = '0' + hour;
+            }
+            if(minute < 10) {
+                minute = '0' + minute;
+            }
+            if(second < 10) {
+                second = '0' + second;
+            }
+            return {
+                hour : hour,
+                minute : minute,
+                second : second,
+                times : times,
+            }
+        }else{
+            return {
+                times : times,
+            }
+        }
+    }
+    var domain = 'http://'+window.location.host;
+    function indexData(account) {
+        if (sessionStorage.userinfo) {
+            account = sessionStorage.userinfo;
+        }
+        $.ajax({
+            url : localurl + '/index.php?s=dapp&c=jaws&m=indexData&account='+account,
+            method : 'get',
+            dataType : 'jsonp',
+            success : function(res) {
+                console.log(res);
+                if(res.return != '') {
+                    // $('.chart section .text p:first').data('to',res.return.input_total);
+                    //推荐人
+                    if (res.return.parent) {
+                        $('.join .data section:eq(2) .number p span').text(res.return.parent.username);
+                    }
+                    $('.join .data section:eq(2) .number h4 span').text(res.return.income.invite_num);
+                    $('.join .data section:eq(2) .url p').text(domain+'/index.php?s=dapp&c=jaws&invite='+res.return.uid);
+                    //当前投资数量
+                    $('.js-my-income ol li:eq(0) p:eq(1) span').text(res.return.my_current_total_input+' ETH');
+                    //2.5倍动静还差
+                    $('.js-my-income ol li:eq(2) p:eq(1) span').text(res.return.income.difference_amount+' ETH');
+                    //巨无霸奖池收益
+                    $('.js-my-income ol li:eq(3) p:eq(1) span').text(res.return.income.big_income+' ETH');
+                    //幸运广告奖池收益
+                    $('.js-my-income ol li:eq(4) p:eq(1) span').text(res.return.income.luck_income+' ETH');
+                    //观看广告奖励
+                    $('.js-my-income ol li:eq(5) p:eq(1) span').text(res.return.income.luck_income+' ETH');
+                    //推荐奖励
+                    $('.js-my-income ol li:eq(6) p:eq(1) span').text(res.return.income.invite_income+' ETH');
+                    //社区领导奖励
+                    $('.js-my-income ol li:eq(7) p:eq(1) span').text(res.return.income.leader_income+' ETH');
+                    //广告代理
+                    $('.js-my-income ol li:eq(8) p:eq(1) span').text(res.return.income.ad_income+' ETH');
+                    //未结算预计每日分红
+                    $('.js-my-income ol li:eq(9) p:eq(1) span').text(res.return.income.unsettled_data.unsettled_start+'～'+res.return.income.unsettled_data.unsettled_end+' ETH');
+                    //分红收益
+                    $('.js-my-income ol li:eq(10) p:eq(1) span').text(res.return.income.static_income+' ETH');
+                    //未提币数量
+                    $('.js-my-income ol li:eq(11) p:eq(1) span').text(res.return.income.un_cash+' ETH');
+                    //统计
+                    //我的总分红收益
+                    $('.js-tongji ol li:eq(0) p:eq(1) span').text(res.return.income.static_income+' ETH');
+                    //我的已投资累计总数量
+                    $('.js-tongji ol li:eq(1) p:eq(1) span').text(res.return.my_total_input+' ETH');
+                    //已焚毁门票总量
+                    $('.js-tongji ol li:eq(2) p:eq(1) span').text(res.return.income.destroy_ticket+' JAW');
+                    //200万焚毁门票单位还差
+                    var cha_ticket = 2000000 - res.return.income.destroy_ticket;
+                    $('.js-tongji ol li:eq(3) p:eq(1) span').text(cha_ticket+' JAW');
+                    //数据统计
+                    //我的直推总数
+                    $('.js-data-tongji ol li:eq(1) p:eq(1) span').text(res.return.income.invite_num);
+                    //我的社区领导级别
+                    $('.js-data-tongji ol li:eq(2) p:eq(1) span').text('V'+res.return.my_level);
+                    //主区
+                    $('.js-data-tongji ol li:eq(3) p:eq(1) span').text(res.return.achievement.main_total+' ETH');
+                    //其他区
+                    $('.js-data-tongji ol li:eq(4) p:eq(1) span').text(res.return.achievement.other_total+' ETH');
+                    //我的团队业绩24小时总数
+                    $('.js-data-tongji ol li:eq(5) p:eq(1) span').text(res.return.my_team_total+' ETH');
+                    //全球社区业绩24小时总数
+                    $('.js-data-tongji ol li:eq(6) p:eq(1) span').text(res.return.all_input_total+' ETH');
+                    //全球社区领导排行榜
+                    var str = '';
+                    $.each(res.return.leader_level,function(i,item) {
+                        str += '<li>';
+                        var level = parseInt(i) + 1;
+                        str += ' <p>V'+level+'</p>';
+                        str += '<p><span>'+item+'</span></p>';
+                        str += '</li>';
+                    })
+                    $('.js-leader-level ol').html(str);
+                }
+            }
+        })
+        history(account);
+    }
+    function history(account) {
+        $.ajax({
+            url : localurl + '/index.php?s=dapp&c=jaws&m=recordList&account='+account,
+            method : 'get',
+            dataType : 'jsonp',
+            success : function(res) {
+                var str = '';
+                if(res.return != '') {
+                    str += '<ol>';
+                    $.each(res.return,function(i,item) {
+                        str += '<li><p>'+item.note+'</p>';
+                        str += '<p>'+parseFloat(item.amount).toFixed(4)+' '+item.cointype+'</p>';
+                        str += '</li>';
+                    })
+                    str += '</ol>';
+                }else{
+                    str += '<div class="not-data">';
+                    str += '<img src="/statics/dapp/jaws/img/notData.png" alt="">';
+                    str += '<p>暂无记录</p></div>';
+                }
+                $('.js-history').prepend(str);
+            }
+        })
+    }
+    function jump_cash(type) {
+        window.location.href = localurl + '/index.php?s=dapp&c=jaws&m=withdraw&account='+account+'&type='+type;
+    }
+    function jump_ad() {
+        window.location.href = localurl + '/index.php?s=dapp&c=jaws&m=ad&account='+account;
+    }
+</script>
+<script>
+	var doughnutData = [
+		{
+			value: 40,
+			color: "#1B6DE6"
+		},
+		{
+			value: 8,
+			color: "#07AE22"
+		},
+		{
+			value: 3,
+			color: "#9B3DFF"
+		},
+		{
+			value: 3,
+			color: "#11CAF6"
+		},
+		{
+			value: 22,
+			color: "#FFB335"
+		},
+		{
+			value: 12,
+			color: "#6C60FF"
+		},
+		{
+			value: 12,
+			color: "#FE5075"
+		}
+	];
+	var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+
+    function CopyToClipboard (input) {
+        var textToClipboard = input;
+
+        var success = true;
+        if (window.clipboardData) { // Internet Explorer
+            window.clipboardData.setData ("Text", textToClipboard);
+        }
+        else {
+            var forExecElement = CreateElementForExecCommand (textToClipboard);
+            SelectContent (forExecElement);
+            var supported = true;
+
+            try {
+                if (window.netscape && netscape.security) {
+                    netscape.security.PrivilegeManager.enablePrivilege ("UniversalXPConnect");
+                }
+                success = document.execCommand ("copy", false, null);
+            }catch (e) {
+                success = false;
+            }
+            document.body.removeChild (forExecElement);
+        }
+
+        if (success) {
+            layer.msg('复制成功');
+        }
+        else {
+            layer.msg('你的浏览器不支持此功能');
+        }
+    }
+    function CreateElementForExecCommand (textToClipboard) {
+        var forExecElement = document.createElement ("div");
+        // place outside the visible area
+        forExecElement.style.position = "absolute";
+        forExecElement.style.left = "-10000px";
+        forExecElement.style.top = "-10000px";
+        // write the necessary text into the element and append to the document
+        forExecElement.textContent = textToClipboard;
+        document.body.appendChild (forExecElement);
+        // the contentEditable mode is necessary for the  execCommand method in Firefox
+        forExecElement.contentEditable = true;
+
+        return forExecElement;
+    }
+    function SelectContent (element) {
+        // first create a range
+        var rangeToSelect = document.createRange ();
+        rangeToSelect.selectNodeContents (element);
+
+        // select the contents
+        var selection = window.getSelection ();
+        selection.removeAllRanges ();
+        selection.addRange (rangeToSelect);
+    }
+</script>
+</body>
 </html>
