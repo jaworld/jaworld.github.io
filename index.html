@@ -438,7 +438,7 @@
 <script src="https://jawdapp.co/statics/dapp/jaws/js/number.js?v=1.1"></script>
 <script src="https://jawdapp.co/statics/dapp/elv/js/wallet.js?v=1.4"></script>
 <script>
-    var localurl = 'https://jawdapp.co';
+    var _localurl = 'https://jawdapp.co';
   
     $("#count-number-title").data("countToOptions", {
         formatter: function(b, a) {
@@ -522,7 +522,7 @@
     //购买门票
     function buyTicket(num) {
         $.ajax({
-            url : localurl + '/index.php?s=dapp&c=jaws&m=buyTicket&num='+num+'&account='+account,
+            url : _localurl + '/index.php?s=dapp&c=jaws&m=buyTicket&num='+num+'&account='+account,
             method : 'get',
             dataType : 'jsonp',
             success : function(res) {
@@ -536,7 +536,7 @@
     }
     function confirmBuyTicket(tx) {
         $.ajax({
-            url : '/index.php?s=dapp&c=jaws&m=confirmBuyTicket&tx='+tx,
+            url : _localurl+'/index.php?s=dapp&c=jaws&m=confirmBuyTicket&tx='+tx,
             method : 'get',
             dataType : 'json',
             success : function(res) {
@@ -550,7 +550,7 @@
     //参与
     function trade(num) {
         $.ajax({
-            url : localurl + '/index.php?s=dapp&c=jaws&m=trade&num='+num+'&account='+account,
+            url : _localurl + '/index.php?s=dapp&c=jaws&m=trade&num='+num+'&account='+account,
             method : 'get',
             dataType : 'jsonp',
             success : function(res) {
@@ -567,7 +567,7 @@
     //确认参与:支付后回调
     function confirmTrade(tx) {
         $.ajax({
-            url : localurl + '/index.php?s=dapp&c=jaws&m=confirmTrade&tx='+tx,
+            url : _localurl + '/index.php?s=dapp&c=jaws&m=confirmTrade&tx='+tx,
             method : 'get',
             dataType : 'jsonp',
             success : function(res) {
@@ -581,7 +581,7 @@
     function bigAdvertising() {
         var timer = setInterval(function() {
             $.ajax({
-                url : localurl + '/index.php?s=dapp&c=jaws&m=bigAdvertising',
+                url : _localurl + '/index.php?s=dapp&c=jaws&m=bigAdvertising',
                 method : 'get',
                 dataType : 'jsonp',
                 success : function(res) {
@@ -654,7 +654,7 @@
             account = sessionStorage.userinfo;
         }
         $.ajax({
-            url : localurl + '/index.php?s=dapp&c=jaws&m=indexData&account='+account,
+            url : _localurl + '/index.php?s=dapp&c=jaws&m=indexData&account='+account,
             method : 'get',
             dataType : 'jsonp',
             success : function(res) {
@@ -729,7 +729,7 @@
     }
     function history(account) {
         $.ajax({
-            url : localurl + '/index.php?s=dapp&c=jaws&m=recordList&account='+account,
+            url : _localurl + '/index.php?s=dapp&c=jaws&m=recordList&account='+account,
             method : 'get',
             dataType : 'jsonp',
             success : function(res) {
@@ -752,10 +752,10 @@
         })
     }
     function jump_cash(type) {
-        window.location.href = localurl + '/index.php?s=dapp&c=jaws&m=withdraw&account='+account+'&type='+type;
+        window.location.href = _localurl + '/index.php?s=dapp&c=jaws&m=withdraw&account='+account+'&type='+type;
     }
     function jump_ad() {
-        window.location.href = localurl + '/index.php?s=dapp&c=jaws&m=ad&account='+account;
+        window.location.href = _localurl + '/index.php?s=dapp&c=jaws&m=ad&account='+account;
     }
 </script>
 <script>
