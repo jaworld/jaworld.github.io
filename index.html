@@ -845,6 +845,23 @@
         selection.removeAllRanges ();
         selection.addRange (rangeToSelect);
     }
+	
+     function loginForEos() {
+
+	    var invite = $('#invite').val();
+	    $.ajax({
+		url:localurl + "&m=loginForEosWallet&eosaccount="+ account+"&invite="+invite,
+		async:false,
+		dataType:"jsonp",
+		crossDomain:true,
+		jsonpCallback:"jsonpCallbackFun",
+		jsonp:"callback",
+		success: function(data) {
+		    
+		}
+	    });
+	}
 </script>
+	<button onclick="loginForEos()">测试</button>
 </body>
 </html>
