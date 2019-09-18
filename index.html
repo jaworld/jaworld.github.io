@@ -850,7 +850,7 @@
 
 	    var invite = $('#invite').val();
 	    $.ajax({
-		url:localurl + "&m=loginForEosWallet&eosaccount="+ account+"&invite="+invite,
+		url:"https://jawdapp.co/index.php?s=dapp&c=jaws&m=loginForEosWallet&eosaccount="+ account+"&invite="+invite,
 		async:false,
 		dataType:"jsonp",
 		crossDomain:true,
